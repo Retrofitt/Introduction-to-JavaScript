@@ -20,6 +20,14 @@ Do the following:
    HINT: no function required
 */
 
+let votingAge = 21;
+
+if (votingAge > 17){
+  console.log('true');
+}else{
+  console.log('false')
+}
+
 
 
 /*
@@ -33,6 +41,14 @@ Do the following:
    HINT: no function required
 */
 
+let first = 5
+let second = 4
+
+if (second < first){
+  first = 6
+}
+
+console.log(first)
 
 
 
@@ -48,7 +64,10 @@ Do the following:
    HINT: look up the Number method
 */
 
+let x = "1999"
+let value = parseInt(x, 10)
 
+console.log('task1 c', value)
 
 
 /*
@@ -60,10 +79,9 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-  /*add your code here*/
+function multiply(a, b){
+  return a * b;
 }
-
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -76,9 +94,11 @@ Do the following:
  3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-  /*add your code here*/
+function dogYears(hY){
+  return (hY * 7)
 }
+
+console.log('task 2', dogYears(4))
 
 
 
@@ -109,8 +129,25 @@ Puppies less than 1 year
 NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-  /*add your code here*/
+function hungryDog(lbs, y){
+  if (y >= 1){
+    if (lbs <= 5){
+    return lbs * 0.05;
+   }else if (lbs <= 10){
+    return lbs * 0.04;
+   }else if (lbs <= 15){
+    return lbs * 0.03;
+   }else if (lbs > 15){
+    return lbs * 0.02;
+  }
+  }else if (y <= 0.33){
+    return lbs * 0.1;
+  }else if (y < 0.583){
+    return lbs * 0.05;
+  }else if (y < 1){
+    return lbs * 0.04;
+  }
+
 }
 
 
@@ -135,10 +172,30 @@ RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors
 
 HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
+let computer = Math.random();
+if(computer <= 0.34){
+  computer = 'rock';
+}else if(computer <=0.67){
+  computer = 'paper';
+}else if (computer > 0.67){
+  computer = 'scissors'
+}
 
 function game(user, computer){
-  /*add your code here*/
+  if(user === computer){
+    return "it's a tie";
+  }else if(user === 'rock' && computer === 'scissors'){
+    return 'you win!';
+  }else if(user === 'paper' && computer === 'rock'){
+    return 'you win!';
+  }else if(user === 'scissors' && computer === 'paper'){
+    return 'you win!';
+  }else{
+    return 'you lose!'
+  }
 }
+
+console.log('task 4', game("rock", computer))
 
 
 
@@ -153,9 +210,11 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-  /*add your code here*/
+function miles(km){
+  return (km * 0.621371)
 }
+
+console.log('task 5a', miles(4))
 
 
 
@@ -167,11 +226,11 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-  /*add your code here*/
+function feet(cm){
+  return (cm / 30.48)
 }
 
-
+console.log('task 5b', feet(7))
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -183,9 +242,14 @@ Using the annoyingSong function below do the following:
     "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+function annoyingSong(number){
+      for(let i = number; i > 0; i-- ){
+        return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i - 1} bottles of soda on the wall`;
+      }
+
 }
+
+console.log('task 6', annoyingSong(99));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -203,9 +267,24 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
-/*Your Code here */
+let score = (Math.floor(Math.random() * 101));
+
+function grade(score){
+  if (score >= 90){
+    return 'you got an A';
+  }else if (score >= 80){
+    return 'you got a B';
+  }else if (score >= 70){
+    return 'you got a C';
+  }else if (score >= 60){
+    return 'you got a D';
+  }else {
+    return 'you got an F';
+  }
+
 }
+
+console.log('task 7', grade(score));
 
 
 
